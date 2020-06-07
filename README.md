@@ -10,12 +10,18 @@ Tips &amp; Tricks &amp; Troubleshooting to prepare study lab for OSWE. This is u
 `npm install bassmaster@1.5.1`
 4. Followed by hapi version 12:
 `npm isntall hapi@12`
-5. Your example\batch.js would probably not work at this point. You need the latest bassmaster's batch.js. 
-  a.  Create a new directory.
+5. Your example\batch.js would probably not work at this point. You need the latest bassmaster's batch.js.
+  a. Create a new directory.
   b. Then: `npm install bassmaster`
   c. Go into node_modules\bassmaster\examples\
   d. Copy the batch.js file and overwrite your bassmaster v1.5.1 examples\batch.js
   e. If port 8080 is used by your Burpsuite, go into the batch.js edit the following line to your preferred listening port:
   `    internals.http.connection({ port: 8080 });`
 6. Go back to your lab experiment directory and into the bassmaster v1.5.1, run the following command:
-`node examples\batch.js`
+```node examples\batch.js```
+7. Browse to the 'request' URI on the host at the port you have set, for example:
+`http://localhost:8000/request'
+8. You should observe a JSON response such as:
+```json
+[{"id":"fa0dbda9b1b","name":"John Doe"},{"id":"55cf687663","name":"Active Item"},{"id":"55cf687663","name":"Item"}]
+```
